@@ -1,12 +1,9 @@
 import { useState } from 'react'
 import classes from './Greeting.module.css'
+import { useAuth } from '../providers/AuthProvider'
 
-interface IGreetYou {
-  name: string
-  isLoggedIn: boolean
-}
-
-const Greeting = ({ name, isLoggedIn }: IGreetYou) => {
+const Greeting = () => {
+  const { username } = useAuth()
   // const { name, msg } = props
   const [greetingMsg, setGreeting] = useState<string>('Hello Joo')
   const handleC = () => {
@@ -18,7 +15,7 @@ const Greeting = ({ name, isLoggedIn }: IGreetYou) => {
       <div className={classes.card}>
         <h4>{greetingMsg}</h4>
 
-        <p>{isLoggedIn ? name : 'UNKNOWN'}</p>
+        <p>{username}</p>
       </div>
       <button onClick={handleC}>Change text here...</button>
     </>
