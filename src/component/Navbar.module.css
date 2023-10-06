@@ -20,6 +20,8 @@
   font-size: 18px;
   color: cadetblue;
   font-weight: bolder;
+  text-decoration: none;
+  text-align: center;
 }
 
 .btn1:hover {
